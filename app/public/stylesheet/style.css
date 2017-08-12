@@ -1,0 +1,49 @@
+:root{
+  --main-color: #607d8b;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* navbar */
+
+nav{
+  background-color: var(--main-color);
+  box-shadow: inset 0 -14px 20px -16px #111;
+}
+
+
+nav ul a img{
+  height:100%;
+  padding:15px 0
+}
+
+.nav-wrapper{
+  margin: 0 2rem;
+}
+
+#logo-pic{
+  height: 100%;
+  padding:10px 0
+}
+
+#logo-name{
+  padding-left:1rem
+}
+
+/* Sticky footer */
+.page-footer{
+  background-color: var(--main-color);
+  padding:0;
+  box-shadow: inset 0 15px 20px -16px #111;
+}
+
+.sep{margin: 1rem}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}

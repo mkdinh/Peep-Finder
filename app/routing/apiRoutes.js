@@ -22,7 +22,7 @@ var reqAll = function(req,res){
     var friendlist = path.join(__dirname,'../data/friends.js');
 
     // send file to browser
-    return res.sendFile(friendList)
+    return res.sendFile(friendlist)
 };
 // -------------------------------- POST -----------------------------------
 // A POST route that will display incoming survey results and compatibility logics

@@ -12,12 +12,13 @@ var path = require('path')
 
 // set router for homepage address and read off index.html
 router.get('/', function(req,res){
-   reqHome(req,res)
+//    reqHome(req,res)
+    res.render('index');
 });
 
-var reqHome = function(req,res){
-    res.sendFile(path.join(__dirname,'../public/index.html'));
-};
+// var reqHome = function(req,res){
+//     res.sendFile(path.join(__dirname,'../public/index.html'));
+// };
 
 
 // set router for survey page to read off survey.html
@@ -26,7 +27,7 @@ router.get('/survey', function(req,res){
 });
 
 var reqSurvey = function(req,res){
-    res.sendFile(path.join(__dirname,'../public/survey.html'));
+    res.render('survey');
 };
 
 // export routes to connect to server.js 
