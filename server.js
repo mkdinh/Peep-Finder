@@ -10,7 +10,7 @@ var bodyParser = require('body-parser');
 
 // Initializing App with express 
 var app = express();
-var PORT = 3000;
+var PORT =  process.env.PORT || 3000;;
 
 // setting up view engine
 app.set('view engine', 'ejs');
