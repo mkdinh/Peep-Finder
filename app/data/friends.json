@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Lionel Richie",
+    "photo": "https://media.giphy.com/media/TAqYM2x2WHoT6/giphy.gif",
+    "scores": [
+      1,
+      3,
+      5,
+      1,
+      4,
+      2,
+      3,
+      6,
+      2,
+      1
+    ]
+  },
+  {
+    "name": " ",
+    "photo": "",
+    "scores": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  }
+]

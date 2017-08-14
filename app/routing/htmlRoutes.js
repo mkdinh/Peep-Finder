@@ -16,10 +16,6 @@ router.get('/', function(req,res){
     res.render('index');
 });
 
-// var reqHome = function(req,res){
-//     res.sendFile(path.join(__dirname,'../public/index.html'));
-// };
-
 
 // set router for survey page to read off survey.html
 router.get('/survey', function(req,res){
@@ -29,6 +25,8 @@ router.get('/survey', function(req,res){
 var reqSurvey = function(req,res){
     res.render('survey');
 };
+
+
 
 // export routes to connect to server.js 
 module.exports = router;

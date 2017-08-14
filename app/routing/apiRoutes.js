@@ -19,7 +19,7 @@ router.get('/friends', function(req,res){
 
 var reqAll = function(req,res){
     // Get path to friendlist JSON file
-    var friendlist = path.join(__dirname,'../data/friends.js');
+    var friendlist = path.join(__dirname,'../data/friends.json');
 
     // send file to browser
     return res.sendFile(friendlist)
@@ -27,33 +27,85 @@ var reqAll = function(req,res){
 // -------------------------------- POST -----------------------------------
 // A POST route that will display incoming survey results and compatibility logics
 router.post('/friends',function(req,res){
+    // handle request call from ajax
     reqResults(req,res)
 });
 
 var reqResults = function(req,res){
+    // grab object from req body
     var newFriend = req.body;
-    res.json(newFriend)
-   
-    // Update JSON file with new object
-    updateList(newFriend)
+
+    // convert score elements from string to array
+    newFriend.scores = newFriend.scores.map(Number);
+
+    // match friend using survey scores and update js files
+    matchFriend(newFriend)
+
+    // send json to html
+    res.json(newFriend);
+
 };
 
-// Matching logic --------------------------------
-
-// Update List --------------------------------
-var updateList = function(obj){
-    // Get path to friendlist JSON file
-    var filePath = path.join(__dirname,'../data/friends.js');
-
+var readJSON = function(fn){
+    // determine path for file
+    var filePath = path.join(__dirname,'../data/friends.json');
     // read JSON file
     fs.readFile(filePath,'utf8', function(err,data){
         if(err) throw err;
-        var list = JSON.parse(data) 
-        console.log(typeof list)
-        // push new object into local array and rewrite file
-        addFriends(list,obj)
+        fn(data);
     })
 }
+
+// Matching logic --------------------------------
+var matchFriend = function(obj){
+    var scores = obj.scores;
+
+    // read JSON file
+    readJSON(function(data){
+
+        var list = JSON.parse(data);
+        var friendScore = [];
+        
+        for(var i = 0; i < list.length; i++){
+            // loop over all the object and calculate the total differences to the user score
+            indivScore= calcScore(scores,list[i].scores);
+
+            // push total difference into an array to determine the lowest score
+            friendScore.push(indivScore);
+        }
+        
+        // find index of the small score
+        var closestIndex = friendScore.indexOf(Math.min(...friendScore));
+
+        // match index of the smallest value on friendScore to list
+        var closestMatch = list[closestIndex].name;
+        console.log(closestMatch)
+
+        addFriends(list,obj)
+
+    })
+}
+
+// calculate scores
+var calcScore = function(user,friend){
+    var diff;
+    var diffArray = [];  
+
+    // Calculate differences in individual questions
+    for(var j = 0; j < user.length; j++){
+        diffArray[j] = Math.abs(user[j]-friend[j]);  
+    }
+
+    // calculate total difference and return value
+    diff = diffArray.reduce(getSum);    
+    return diff
+
+    }
+
+    function getSum(total,num){
+        return total+num
+}
+
 
 // Write to File --------------------------------
 var addFriends = function(array,element){
@@ -65,8 +117,7 @@ var addFriends = function(array,element){
     array = JSON.stringify(array,null,2);
 
     // rewrite json file with user
-    fs.writeFile(path.join(__dirname,'../data/friends.js'), array, 'utf8', function(err){
-        if(err) throw err;
+    fs.writeFile(path.join(__dirname,'../data/friends.json'),array,function(){
         console.log('friend added!')
     })
 }

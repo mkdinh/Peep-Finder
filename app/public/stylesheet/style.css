@@ -1,6 +1,14 @@
 :root{
   --main-color: #607d8b;
+  --bluegrey-2: #546e7a;
+  --bluegrey-3: #37474f; 
   font-family: 'Roboto', sans-serif;
+}
+
+body{
+  width:100%;
+  background-image: url('../image/index.jpeg');
+  background-attachment:fixed
 }
 
 /* navbar */
@@ -26,8 +34,157 @@ nav ul a img{
 }
 
 #logo-name{
-  padding-left:1rem
+  padding-left:1rem;
+  font-family: 'Lobster',cursive;
 }
+
+/* Survey.html */
+
+
+.survey-wrapper{
+  background-color: rgba(255,255,255,0.9);
+  padding: 20px;
+  display:none
+}
+
+.page-title{
+  color: var(--bluegrey-2);
+  font-family: 'Lobster', sans-serif;
+  font-size: 4.5rem;
+  text-align: center;
+}
+
+.sexy-line{ 
+  display:block;
+  border:none;
+  color:white;
+  height:1px;
+  background: var(--bluegrey-2);
+  background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 350, from(var(--bluegrey-2)), to(rgba(255,255,255,0.1)));
+
+}
+
+.user-info{
+  margin: 2rem auto;
+}
+
+input[type=text]:not(.browser-default):focus:not([readonly]){
+  color: #37474f;
+  border-bottom: 1px solid var(--bluegrey-2);
+  box-shadow: 0 1px 0 0 var(--bluegre-2);
+}
+
+input[type=text]:focus:not(.browser-default):focus:not([readonly]) + label{color:#37474f}
+
+
+input[type=range] + .thumb.active , input[type="range"]+.thumb{background-color: var(--main-color)}
+
+table{
+  border-top: 1px solid var(--bluegrey-2);
+  border-bottom: 1px solid var(--bluegrey-2);
+}
+
+table h5{
+  color: var(--bluegrey-3);
+  padding:10px;
+  font-size:1.5rem;
+  font-family: 'Cutive', sans-serif;
+}
+
+table p{
+  padding:10px;
+  font-size:1.2rem;
+  padding:1rem 2rem 2rem 2rem;
+  font-family: 'Cutive', sans-serif 
+}
+
+
+.survey-wrapper table{background-color:rgba(176,190,197,1)}
+
+.dropdown-content li>span,.select-content li>span{color:var(--bluegrey-3)}
+
+#survey-submit{
+  background-color: var(--main-color);  
+  display:block;
+  margin: 2rem auto;
+  width: 20%;
+  font-size:1.5rem;
+  padding: 1rem;
+  height:auto;
+}
+
+#survey-submit .material-icons{font-size:2rem}
+
+/* index html */
+
+@keyframes slide{
+  0% {-webkit-transform: translateX(0)}
+  100% {-webkit-transform: translateX(100%)}
+}
+
+#index-title{
+  position: absolute;
+  top: 25%;
+  left: -50%;
+  width: 50%;
+  background-color: rgba(255,255,255,.8);
+  font: italic bold 5rem 'Lobster';
+  text-align: center;
+  color: var(--bluegrey-3);
+  animation: slide .8s ease-in-out 1 forwards; 
+}
+
+#index-header{
+  position: absolute;
+  top:45%;
+  left:-38%;
+  width:38%;
+  background-color: rgba(255,255,255,.8);
+  font: italic bold 2rem 'Cutive';
+  text-align:center;
+  color: var(--bluegrey-2);
+  animation: slide .8s .8s ease-in-out 1 forwards;
+}
+
+#index-hook{
+  position: absolute;
+  top:57%;
+  left:-29%;
+  width:29%;
+  background-color: rgba(255,255,255,.8);
+  font: italic bold 1rem 'Cutive';
+  text-align:center;
+  color: var(--bluegrey-2);
+  animation: slide .8s 1.6s ease-in-out 1 forwards;
+}
+
+#index-btn{
+  position: absolute;
+  top:40%;
+  right: 10%;
+  width:25%;
+  height:auto;
+  font-size:2rem;
+  background-color:var(--bluegrey-3);
+  opacity:0;
+  animation: float 1s 0s ease-in-out alternate infinite, appear 1s 2.5s ease-in-out 1 forwards;
+  transition: box-shadow .2s;
+}
+
+#index-btn:hover{
+  box-shadow: 0 0 100px white;
+}
+
+@keyframes appear{
+  0% {opacity:0 }
+  100% {opacity: 1}
+}
+
+@keyframes float{
+  0% {-webkit-transform: translateY(10%)}
+  100% {-webkit-transform: translateY(-10%)}
+}
+
 
 /* Sticky footer */
 .page-footer{
