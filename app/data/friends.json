@@ -4,20 +4,26 @@
     "photo": "https://media.giphy.com/media/TAqYM2x2WHoT6/giphy.gif",
     "scores": [
       1,
+      2,
       3,
+      4,
       5,
       1,
-      4,
       2,
       3,
-      6,
-      2,
-      1
+      4,
+      5
+    ],
+    "highlights": [
+      "Love a good party",
+      "Keeps up a steady stream of conversation",
+      "Likes to talk about intellectual things like art and philosophy",
+      "I am always doing new things"
     ]
   },
   {
-    "name": " ",
-    "photo": "",
+    "name": "Fooz Baz",
+    "photo": "https://static.pexels.com/photos/127028/pexels-photo-127028.jpeg",
     "scores": [
       1,
       1,
@@ -29,6 +35,43 @@
       1,
       1,
       1
+    ],
+    "highlights": [
+      "\n              Love a good party\n            ",
+      "\n              Enjoys going to museums and cultural events\n            ",
+      "\n              Likes to talks about feelings and emotions\n            ",
+      "\n              Like to keep a schedule\n            ",
+      "\n              Keeps up a steady stream of conversation  \n            ",
+      "\n              Likes to talk about intellectual things like art and philsophy\n            ",
+      "\n              Is a social butterfly\n            ",
+      "\n              Is more logical than emotional\n            ",
+      "\n              Love to travel\n            ",
+      "\n              I am always doing new things.\n            "
+    ]
+  },
+  {
+    "name": "Michael Dinh",
+    "photo": "http://scienceblogs.com/insolence/files/2017/04/Dogrunning.jpg",
+    "scores": [
+      3,
+      5,
+      3,
+      5,
+      2,
+      4,
+      1,
+      4,
+      5,
+      2
+    ],
+    "highlights": [
+      "\n              Love a good party\n            ",
+      "\n              Enjoys going to museums and cultural events\n            ",
+      "\n              Likes to talks about feelings and emotions\n            ",
+      "\n              Like to keep a schedule\n            ",
+      "\n              Likes to talk about intellectual things like art and philsophy\n            ",
+      "\n              Is more logical than emotional\n            ",
+      "\n              Love to travel\n            "
     ]
   }
 ]

@@ -1,0 +1,21 @@
+<% for(i =  0; i < list.length; i++){ %>
+    <div class="card">
+            <div class="card-image-wrapper">
+              <img src= <%-'"' + list[i].photo + '"' %> class='card-image' >
+            </div>
+            
+            <div class="card-content">
+                <p class="card-title"> <%- list[i].name %> </p>
+                <div class='card-highlights-wrapper'> 
+                  <ul  class='card-highlights'>
+                  <% for(j = 0; j < list[i].highlights.length; j++){ %> 
+                      <li> <%- list[i].highlights[j] %> </li>
+                  <% } %>  
+                  </ul>
+                </div>
+            </div>
+            <div class="card-action">
+              <a href="#"> <%- %> </a>
+            </div>
+    </div>
+<% } %>

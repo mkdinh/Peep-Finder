@@ -10,6 +10,7 @@ var path = require('path')
 var bodyParser = require('body-parser')
 var fs = require('fs');
 
+
 // -------------------------------- GET -----------------------------------
 
 // A GET route that will display a JSON of all possible friends
@@ -46,6 +47,7 @@ var reqResults = function(req,res){
 
 };
 
+// read json file and run a callback function
 var readJSON = function(fn){
     // determine path for file
     var filePath = path.join(__dirname,'../data/friends.json');
@@ -68,7 +70,7 @@ var matchFriend = function(obj){
         
         for(var i = 0; i < list.length; i++){
             // loop over all the object and calculate the total differences to the user score
-            indivScore= calcScore(scores,list[i].scores);
+            indivScore = calcScore(scores,list[i].scores);
 
             // push total difference into an array to determine the lowest score
             friendScore.push(indivScore);
@@ -99,13 +101,12 @@ var calcScore = function(user,friend){
     // calculate total difference and return value
     diff = diffArray.reduce(getSum);    
     return diff
-
-    }
-
-    function getSum(total,num){
-        return total+num
 }
 
+// calculate sum of array
+function getSum(total,num){
+    return total+num
+}
 
 // Write to File --------------------------------
 var addFriends = function(array,element){

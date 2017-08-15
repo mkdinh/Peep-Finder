@@ -5,6 +5,11 @@
   font-family: 'Roboto', sans-serif;
 }
 
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
+}
+
 body{
   width:100%;
   background-image: url('../image/index.jpeg');
@@ -185,6 +190,49 @@ table p{
   100% {-webkit-transform: translateY(-10%)}
 }
 
+/* Friends page */
+
+.card{
+  width: 33%;
+  display: inline-block;
+}
+
+.card-image-wrapper{
+  overflow: hidden;
+  max-height:200px;
+}
+
+.card-image{
+  width: 130%;
+  overflow: hidden;
+}
+
+.card .card-content{
+  padding:.5 1rem;
+}
+
+.card .card-content p.card-title{
+  color: var(--bluegrey-3);
+  font: bold 2rem 'Lobster', cursive;
+}
+
+.card-highlights-wrapper{
+  overflow: auto;
+  height: 100px
+}
+
+
+.card-highlights{
+  text-align: justify;
+  overflow: auto;
+  font-size: .8rem;
+  margin-left:.5rem
+}
+
+ul{
+  list-style-position: inside;
+  list-style-type: initial;
+}
 
 /* Sticky footer */
 .page-footer{

@@ -1,7 +1,7 @@
 $(window).on('load',function(){
   // on load, fade in survey
-  $('.survey-wrapper').fadeIn(600);
-  
+  setTimeout(function(){$('.survey-wrapper').fadeIn(600)
+},500)
 })
 
 // initialize materializecss
@@ -13,13 +13,24 @@ $('#survey-submit').on('click',function(){
   var results = {
                   "name": $('#first_name').val().trim() + ' ' + $('#last_name').val().trim(),
                   "photo": $('#image_link').val().trim(),
-                  "scores":[$('#q-1 :selected').attr('value'), $('#q-2 :selected').attr('value'), $('#q-3 :selected').attr('value'), $('#q-4 :selected').attr('value'), $('#q-5 :selected').attr('value'),
-                  $('#q-6 :selected').attr('value'), $('#q-7 :selected').attr('value'), $('#q-8 :selected').attr('value'), $('#q-9 :selected').attr('value'), $('#q-10 :selected').attr('value') ]
-                }
-
-  results.scores = results.scores.map(Number);
-  console.log(results.scores);
+                  "scores": [],
+                  "highlights": []
+                };
   
+  for(i = 1; i <= 10; i++){
+    // pushed selected choice into results object
+    var choice = $('#q-'+i+" :selected").attr('value');
+    results.scores.push(choice);
+
+    // if value of selected is either 5 or 0 push into highlight
+    if(choice === '3' || choice === '4' || choice === '5'){
+      var attr = $('#ask-'+i).text();
+      results.highlights.push(attr)
+    }
+  }
+  
+  results.scores = results.scores.map(Number);
+
   $.ajax({
           type: 'POST',
           url:  '/api/friends', 
@@ -31,7 +42,8 @@ $('#survey-submit').on('click',function(){
 })
 
 function success(){
-  
+   // Materialize.toast(message, displayLength, className, completeCallback);
+   Materialize.toast('Matchmaking in progress!', 4000) // 4000 is the duration of the toast
 }
 
 
