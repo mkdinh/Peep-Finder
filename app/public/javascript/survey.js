@@ -37,7 +37,7 @@ console.log(results.name)
     results.scores.push(choice);
 
     // if value of selected is either 5 or 0 push into highlight
-    if(choice === '3' || choice === '4' || choice === '5'){
+    if(choice === '4' || choice === '5'){
       var attr = $('#ask-'+i).text();
       results.highlights.push(attr)
     }
@@ -61,7 +61,7 @@ console.log(results.name)
 
 function success(res){
   // Materialize.toast(message, displayLength, className, completeCallback);
-  Materialize.toast('Matchmaking in progress!', 4000, handlePostReq(res)) // 4000 is the duration of the toast
+  Materialize.toast('Matchmaking in progress!', 2000, handlePostReq(res)) // 4000 is the duration of the toast
 }
 
 function handlePostReq(response){
@@ -71,7 +71,9 @@ function handlePostReq(response){
   $('#match-highlights').text(response.highlights.join(', '))
   
   // show modal
-  $('#match-modal').modal('open');
+  setTimeout(function(){
+    $('#match-modal').modal('open')
+  },2000);
 }
 
 

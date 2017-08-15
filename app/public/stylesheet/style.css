@@ -122,13 +122,14 @@ table p{
 
 /* Modal */
 
-#modal-match{
+.modal{
   max-height: 90vh;
 }
 
 
 #match-photo{
-  margin: 15vh auto
+  margin: 6vh auto;
+  width: 100%
 
 }
 

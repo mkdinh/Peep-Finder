@@ -25,6 +25,7 @@ var reqAll = function(req,res){
     // send file to browser
     return res.sendFile(friendlist)
 };
+
 // -------------------------------- POST -----------------------------------
 // A POST route that will display incoming survey results and compatibility logics
 
