@@ -27,6 +27,7 @@ var reqAll = function(req,res){
 };
 // -------------------------------- POST -----------------------------------
 // A POST route that will display incoming survey results and compatibility logics
+
 router.post('/friends',function(req,res){
     // handle request call from ajax
     reqResults(req,res)
@@ -40,10 +41,7 @@ var reqResults = function(req,res){
     newFriend.scores = newFriend.scores.map(Number);
 
     // match friend using survey scores and update js files
-    matchFriend(newFriend)
-
-    // send json to html
-    res.json(newFriend);
+    var match = matchFriend(newFriend,req,res)
 
 };
 
@@ -59,7 +57,7 @@ var readJSON = function(fn){
 }
 
 // Matching logic --------------------------------
-var matchFriend = function(obj){
+var matchFriend = function(obj,req,res){
     var scores = obj.scores;
 
     // read JSON file
@@ -80,11 +78,13 @@ var matchFriend = function(obj){
         var closestIndex = friendScore.indexOf(Math.min(...friendScore));
 
         // match index of the smallest value on friendScore to list
-        var closestMatch = list[closestIndex].name;
-        console.log(closestMatch)
+        var closestMatch = list[closestIndex];
+
+        // sent json object to hmtl as a reponses
+        res.json(closestMatch);
 
         addFriends(list,obj)
-
+        
     })
 }
 

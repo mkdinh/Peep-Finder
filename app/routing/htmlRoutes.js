@@ -26,6 +26,7 @@ router.get('/survey', function(req,res){
 var reqSurvey = function(req,res){
     res.render('survey');
 };
+
 // set router for friends page to fread of friends.ejs
 router.get('/list', function(req,res){
     reqFriends(req,res);

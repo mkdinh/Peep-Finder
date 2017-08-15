@@ -73,5 +73,57 @@
       "\n              Is more logical than emotional\n            ",
       "\n              Love to travel\n            "
     ]
+  },
+  {
+    "name": "Foo Bar",
+    "photo": "https://cdn-images-1.medium.com/max/1280/1*eFjpoz8lhNKyd8XcSWv2OA.jpeg",
+    "scores": [
+      3,
+      5,
+      2,
+      4,
+      4,
+      5,
+      1,
+      5,
+      1,
+      2
+    ],
+    "highlights": [
+      "\n              Love a good party\n            ",
+      "\n              Enjoys going to museums and cultural events\n            ",
+      "\n              Like to keep a schedule\n            ",
+      "\n              Keeps up a steady stream of conversation  \n            ",
+      "\n              Likes to talk about intellectual things like art and philsophy\n            ",
+      "\n              Is more logical than emotional\n            "
+    ]
+  },
+  {
+    "name": "John Smith",
+    "photo": "https://vignette2.wikia.nocookie.net/tardis/images/4/4a/John_Smith_2.jpg",
+    "scores": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "highlights": [
+      "\n              Love a good party\n            ",
+      "\n              Enjoys going to museums and cultural events\n            ",
+      "\n              Likes to talks about feelings and emotions\n            ",
+      "\n              Like to keep a schedule\n            ",
+      "\n              Keeps up a steady stream of conversation  \n            ",
+      "\n              Likes to talk about intellectual things like art and philsophy\n            ",
+      "\n              Is a social butterfly\n            ",
+      "\n              Is more logical than emotional\n            ",
+      "\n              Love to travel\n            ",
+      "\n              I am always doing new things.\n            "
+    ]
   }
 ]
